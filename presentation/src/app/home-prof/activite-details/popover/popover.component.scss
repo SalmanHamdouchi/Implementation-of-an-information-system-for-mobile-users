@@ -1,0 +1,36 @@
+.actionsHolder {
+    border-radius: 10px;
+    .deletion,
+    .note,
+    .abscence {
+        display: flex;
+        padding: 5px 3px;
+        margin: 5px 5px;
+        border-radius: 5px;
+        color: #191919;
+        transition: .4s ease;
+        ion-icon {
+            font-size: 24px;
+            margin-right: 6px;
+            margin-left: 2px;
+        }
+        p {
+            font-size: 16px;
+            transform: scaleX(0.95);
+            margin: 0;
+        }
+    }
+    .deletion:active,
+    .note:active,
+    .abscence:active {
+        background-color: #838383;
+    }
+    .divider {
+        height: 1px;
+        background-color: #bdbdbd;
+        padding: 0;
+        margin: 0;
+        width: 70%;
+        margin: 0 auto;
+    }
+}

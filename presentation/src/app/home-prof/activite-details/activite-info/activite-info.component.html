@@ -1,0 +1,55 @@
+<ion-content>
+    <div class="title">
+        <p>Informations sur l'activité</p>
+    </div>
+
+    <div class="info">
+        <table>
+            <tr>
+                <td>
+                    <p>Activité : </p>
+                </td>
+                <td class="capitilize">
+                    {{activite.nom}}
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Matière : </p>
+                </td>
+                <td class="capitilize">
+                    {{activite.ligneNvMatiere.matiere.nom}}
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Niveau : </p>
+                </td>
+                <td>
+                    {{activite.ligneNvMatiere.niveau.nv}}
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Horraires : </p>
+                </td>
+            </tr>
+
+        </table>
+        <table>
+            <tr *ngFor="let horr of activiteTableTime">
+                <td> {{horr}} </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="closeButtonHolder">
+        <ion-button (click)="dismissPopover()">
+            Fermer
+        </ion-button>
+    </div>
+
+</ion-content>

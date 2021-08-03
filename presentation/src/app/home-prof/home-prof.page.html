@@ -1,0 +1,70 @@
+<ion-content class="ion-padding ion-margin-top">
+
+    <div class="logout">
+        <ion-button fill="clear" (click)="logout()">
+            <ion-icon name="log-out-outline"></ion-icon>
+        </ion-button>
+    </div>
+
+    <div class="aboutAppIcon">
+        <ion-button fill="clear" (click)="openAboutApp()" class="no-ripple">
+            <ion-icon name="information-circle-outline"></ion-icon>
+        </ion-button>
+    </div>
+
+    <ion-text color="dark" class="greetings">
+        <p>Salut
+            <ion-text color="primary"> {{prenom}}</ion-text>,
+        </p>
+    </ion-text>
+
+    <ion-text color="medium" class="activitiesInfo">
+        <p>Voici les activités enseignées par vous</p>
+    </ion-text>
+
+    <div class="searchbarContainer">
+        <ion-icon name="search" color="lightDark"></ion-icon>
+        <ion-input type="text" placeholder="Rechercher une activité" class="searchbar" [(ngModel)]="searchValue" (ngModelChange)="searchActivities()"></ion-input>
+
+        <ion-icon name="close-circle" color="lightDark" (click)="clearInput()"></ion-icon>
+    </div>
+
+    <nav>
+        <ul>
+
+            <li *ngFor="let day of days">
+                <label [ngClass]="{'checked' : isChecked(day)}" [for]="day" class="capitilize">{{day}} </label>
+                <input class="check" (change)="addToDays(day)" checked [id]="day" type="checkbox" />
+            </li>
+
+        </ul>
+    </nav>
+   
+        <ng-container *ngFor="let activite of activities">
+            <div *ngIf="activite" class="activiteHolder activite" (click)="getActiviteDetail(activite.id)">
+                <img [src]="activite.ligneNvMatiere.matiere.photo">
+                <div class="etudiants">
+                    <div *ngIf="activite.etudiant" class="oneEtudiant" >
+                            {{activite.etudiant.nom+" "+ activite.etudiant.prenom}}
+                        </div>
+                    <div *ngIf="activite.etudiants" class="manyEtudiant">
+                        <span *ngFor="let et of activite.etudiants">
+                                {{et.nom+" "+ et.prenom}},
+                            </span>
+                    </div>
+                </div>
+                <p>{{activite.nom}}
+                    <span>
+                        {{getHoraire(activite.horraires)}}
+                        </span>
+                </p>
+
+            </div>
+        </ng-container>
+  
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-content>
+    <div class="title">
+        <p>Ajouter une seance</p>
+    </div>
+
+
+    <form (ngSubmit)="addSeance()" [formGroup]="getForm()">
+        <div class="inputHolder">
+
+            <ion-text color="dark" class="labels">
+                <span>Date de la séance
+              </span>
+                <ion-text color="danger">*
+                </ion-text>
+            </ion-text>
+
+            <input type="date"  placeholder="Entrer une date" formControlName="date">
+
+            <ion-text color="dark" class="labels ion-margin-top">
+                <span>Heure de début
+              </span>
+                <ion-text color="danger">*
+                </ion-text>
+            </ion-text>
+            <ion-datetime minuteValues="0,30" displayFormat="HH:mm"  placeholder="début séance" formControlName="debutS">
+                </ion-datetime>
+
+
+            <ion-text color="dark" class="labels ion-margin-top">
+                <span>Heure de fin
+              </span>
+                <ion-text color="danger">*
+                </ion-text>
+            </ion-text>
+            <ion-datetime minuteValues="0,30" displayFormat="HH:mm" placeholder="fin séance" formControlName="finS">
+</ion-datetime>
+            <ion-text color="dark" class="labels">
+                <span>Remarque
+                  </span>
+            </ion-text>
+
+            <textarea inputmode="text" rows="5" placeholder="Entrer une note" formControlName="note"></textarea>
+
+            <ion-text color="danger" class="errorMessage" *ngIf="!getFormValid()">
+                <p>Veuillez verifiez vos informations et réessayer</p>
+            </ion-text>
+        </div>
+
+
+        <div class="buttonsHolder">
+            <ion-button type="submit">
+                Ajouter
+            </ion-button>
+            <ion-button color="medium" (click)="dismissPopover()">
+                Annuler
+            </ion-button>
+        </div>
+
+
+    </form>
+</ion-content>

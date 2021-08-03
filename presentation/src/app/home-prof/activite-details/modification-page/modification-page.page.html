@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-icon slot="start" name="arrow-back-outline" color="primary" (click)="goBack()"></ion-icon>
+        <ion-title color="primary">Modifier une séance</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form (ngSubmit)="updateSeance()" [formGroup]="getForm()" *ngIf="getForm()">
+        <div class="inputHolder">
+
+            <ion-text color="dark" class="labels">
+                <span>Date du seance
+          </span>
+                <ion-text color="danger">*
+                </ion-text>
+            </ion-text>
+
+            <input type="date" [(ngModel)]="seanceDate"  placeholder="Entrer une date" formControlName="date">
+
+            <ion-text color="dark" class="labels ion-margin-top">
+                <span>Heure de début
+          </span>
+                <ion-text color="danger">*
+                </ion-text>
+            </ion-text>
+            <ion-datetime  minuteValues="0,30" displayFormat="HH:mm"   [(ngModel)]="seanceTime" placeholder="heure début" formControlName="debutS">
+                </ion-datetime>
+            <ion-text color="dark" class="labels ion-margin-top">
+                <span>Heure de fin          
+
+                </span>
+                <ion-text color="danger">*
+                </ion-text>
+            </ion-text>
+            <ion-datetime  minuteValues="0,30" displayFormat="HH:mm"  [(ngModel)]="seanceFin" placeholder="heure fin" formControlName="finS">
+                </ion-datetime>
+            <ion-text color="dark" class="labels">
+                <span>Remarque
+              </span>
+            </ion-text>
+            <textarea [(ngModel)]="note" inputmode="text" rows="5" placeholder="Entrer une note" formControlName="note"></textarea>
+            <ion-text color="danger" class="errorMessage" *ngIf="!getFormValid()">
+                <p>Veuillez verifiez vos informations et réessayer</p>
+            </ion-text>
+        </div>
+
+
+
+        <div class="buttonsHolder">
+            <ion-button type="submit">
+                Modifier
+            </ion-button>
+            <ion-button color="medium" (click)="goBack()">
+                Annuler
+            </ion-button>
+        </div>
+    </form>
+</ion-content>

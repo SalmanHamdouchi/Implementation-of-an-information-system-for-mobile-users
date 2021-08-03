@@ -1,0 +1,165 @@
+.greetings {
+    font-weight: 600;
+    font-size: 25px;
+    p {
+        margin-bottom: 5px;
+        margin-top: 30px;
+    }
+}
+
+.activitiesInfo {
+    font-size: 18px;
+}
+
+.searchbarContainer {
+    position: relative;
+    ion-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        z-index: 3;
+    }
+    ion-icon[name="search"] {
+        left: 20px;
+    }
+    ion-icon[name="close-circle"] {
+        right: 10px;
+    }
+}
+
+.logout {
+    position: absolute;
+    top: 0.5%;
+    right: 3%;
+    ion-button {
+        border: 1px solid var(--ion-color-primary);
+        box-shadow: 0px 0px 0px 0.5px var(--ion-color-primary);
+        text-transform: unset;
+        border-radius: 5px;
+        --padding-start: 5px;
+        --padding-end: 3px;
+    }
+    ion-icon {
+        font-size: 25px
+    }
+}
+
+.aboutAppIcon {
+    position: absolute;
+    right: 36px;
+    top: 0.7%;
+    ion-icon {
+        font-size: 34px;
+    }
+}
+
+.searchbar {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 50px;
+    height: 50px;
+    background-color: #ebebef;
+    --padding-start: 60px;
+    --padding-end: 30px;
+}
+
+
+   
+    
+    .activite {
+        border-bottom: 1px solid gray;
+        margin: 5px 0px;
+        position: relative;
+        img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            margin-left: 5px;
+            
+        }
+    
+    p {
+        margin: 0px;
+    }
+    p span {
+        display: block;
+        font-size: 10px;
+        font-style: italic;
+    }
+    .etudiants {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        width: 100%;
+        text-align: center;
+        background-color: #222222bb;
+        color: white;
+    }
+    .manyEtudiant {
+        font-size: 12px;
+        span {
+            display: inline;
+        }
+    }
+}
+
+.ion-color-lightDark {
+    --ion-color-base: #444851;
+    --ion-color-base-rgb: 68, 72, 81;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255, 255, 255;
+    --ion-color-shade: #3c3f47;
+    --ion-color-tint: #575a62;
+}
+
+nav {
+    width: 100%;
+    margin-top: 10px;
+}
+
+ul {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    padding: 0px;
+    width: 102%;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+li {
+    display: block;
+    padding: 7px 7px;
+    flex: 1 0;
+    min-width: 50%;
+    text-align: center;
+    label {
+        width: 100%;
+        background-color: white;
+        display: block;
+        padding: 6px 0;
+        color: #5f70d0;
+        border-radius: 5px;
+        font-weight: 500;
+        letter-spacing: 0.7px;
+        border: 2px solid #5f70d09e;
+    }
+}
+
+.check {
+    display: none;
+}
+
+.checked {
+    background-color: #5f70d0 !important;
+    // display: block;
+    // color: white;
+    // padding: 6px 0;
+    color: white !important;
+    border: none !important;
+    // border-radius: 5px;
+    // font-weight: 500;
+    // letter-spacing: 0.7px;
+}

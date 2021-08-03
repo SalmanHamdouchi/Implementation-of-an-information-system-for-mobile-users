@@ -1,0 +1,19 @@
+<div class="modal">
+    <div class="title">
+        <h2>Confirmation d'action</h2>
+    </div>
+    <div class="underline"></div>
+    <div class="content">
+        <p>Supprimer cette séance</p>
+        <p>Etes-vous sûr de vouloir supprimer la séance ?</p>
+    </div>
+    <div class="buttons">
+        <ion-button (click)="deleteSeance()" color="danger">
+            Oui
+        </ion-button>
+        <ion-button (click)="dismissPopover()" color="medium">
+            Annuler
+        </ion-button>
+
+    </div>
+</div>

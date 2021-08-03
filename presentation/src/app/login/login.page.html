@@ -1,0 +1,66 @@
+<ion-content class="ion-padding">
+
+    <ion-text color="primary" class="greeting">
+        <p>Nous saluons le retour</p>
+    </ion-text>
+
+    <ion-text color="dark" class="accountTypeText">
+        <p>Veuillez selectioner votre type de compte </p>
+    </ion-text>
+
+    <form (ngSubmit)="login()" [formGroup]="getForm()">
+
+        <ion-grid>
+            <ion-radio-group formControlName="staffChoice">
+                <ion-row class="ion-justify-content-between">
+
+
+                    <ion-col size="5.7" [ngClass]="[getProfColBorder()]">
+                        <ion-radio (click)="toggleRadio('prof')" value="professeur"></ion-radio>
+                        <ion-img src="assets/images/multiple_login_teacher.png"></ion-img>
+                        <ion-text color="dark">
+                            <p>Professeur</p>
+                        </ion-text>
+                        <ion-icon id="profCheckIcon" name="checkmark-outline" color="light" *ngIf="getProfesseur()">
+                        </ion-icon>
+                    </ion-col>
+
+                    <ion-col size="5.7" [ngClass]="[getEtudColBorder()]">
+                        <ion-radio (click)="toggleRadio('etud')" value="etudiant"></ion-radio>
+                        <ion-img src=" assets/images/multiple_login_student.png "></ion-img>
+                        <ion-text color="dark ">
+                            <p>Etudiant</p>
+                        </ion-text>
+                        <ion-icon id="etuCheckIcon" name="checkmark-outline" color="light" *ngIf="getEtudiant()">
+                        </ion-icon>
+                    </ion-col>
+
+                </ion-row>
+            </ion-radio-group>
+
+
+        </ion-grid>
+
+        <ion-text color="danger" class="errorMessage" *ngIf="!getFormValid()">
+            <p>Veuillez verifiez vos informations et réessayer</p>
+        </ion-text>
+
+        <ion-text color="danger" class="errorMessage" *ngIf="!getLoginValid()">
+            <p>Veuillez entrez les informations correctes</p>
+        </ion-text>
+
+        <ion-input class="ion-no-border ion-margin-bottom" type="email" formControlName="mail" placeholder="Entrer votre E-mail">
+        </ion-input>
+
+        <ion-input class="ion-no-border" type="password" formControlName="password" placeholder="Entrer votre mot de passe">
+        </ion-input>
+
+        <ion-button type="submit" color="primary" expand="block">
+            Se connecter
+        </ion-button>
+
+        {{getForm().errors}}
+
+    </form>
+  
+</ion-content>

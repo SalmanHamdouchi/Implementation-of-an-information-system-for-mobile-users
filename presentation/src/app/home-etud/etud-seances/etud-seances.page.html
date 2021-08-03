@@ -1,0 +1,47 @@
+<div class="header ion-margin-start ion-margin-top">
+    <ion-icon slot="start" name="arrow-back-outline" (click)="goBack()"></ion-icon>
+</div>
+<ion-content [scrollEvents]="false">
+    <div class="imageHolder">
+        <img [src]="imageUrl
+    ">
+    </div>
+    <div class="seancesHolder">
+        <p class="seanceHeader">Les Séances de l'activité {{nomActivite}}</p>
+        <ion-content [scrollEvents]="true" id="seancesList">
+            <ion-item color="light" lines="none" *ngFor="let seance of seances, let i = index" [attr.data-index]="i">
+                <table>
+                    <tr>
+                        <td rowspan="4">
+                            <ion-label class="index" color="lightMedium">{{i+1}}</ion-label>
+                        </td>
+                        <td class="dateHolder">
+                            <ion-label class="date"> <span class="titles"> Date </span> : {{seance.date}} -> {{seance.hourEnd}}</ion-label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <ion-label class="seanceInfo"> <span class="titles"> Description </span> : {{seance.description}} </ion-label>
+                        </td>
+                    </tr>
+                    <div *ngFor="let presence of seance.presences, let i = index">
+                        <div *ngIf="presence.etudiant.id == id">
+                            <tr>
+                                <td>
+                                    <ion-label class="seanceInfo"> <span class="titles"> Abscence </span> : <span [ngStyle]="changeBackground(presence.absent)">{{presence.absent ? 'Présent(e)' : 'Absent(e)'}}</span></ion-label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ion-label class="seanceInfo"> <span class="titles"> Remarque </span> : {{presence.remarque}}</ion-label>
+                                </td>
+                            </tr>
+                        </div>
+                    </div>
+                </table>
+            </ion-item>
+
+        </ion-content>
+    </div>
+</ion-content>

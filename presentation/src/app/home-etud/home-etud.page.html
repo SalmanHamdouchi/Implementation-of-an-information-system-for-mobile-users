@@ -1,0 +1,46 @@
+<ion-content class="ion-padding ion-margin-top">
+
+    <div class="logout">
+        <ion-button fill="clear" (click)="logout()">
+            <ion-icon name="log-out-outline"></ion-icon>
+        </ion-button>
+    </div>
+
+    <div class="aboutAppIcon">
+        <ion-button fill="clear" (click)="openAboutApp()" class="no-ripple">
+            <ion-icon name="information-circle-outline"></ion-icon>
+        </ion-button>
+    </div>
+
+    <ion-text color="dark" class="greetings">
+        <p>Salut
+            <ion-text color="primary"> {{prenom}}</ion-text>,
+        </p>
+    </ion-text>
+
+    <ion-text color="medium" class="activitiesInfo">
+        <p>Voici les activités auxquelles vous êtes inscrit</p>
+    </ion-text>
+
+    <div class="searchbarContainer">
+        <ion-icon name="search" color="lightDark"></ion-icon>
+        <ion-input type="text" placeholder="Rechercher une activité" class="searchbar" [(ngModel)]="searchValue" (ngModelChange)="searchActivities()"></ion-input>
+        <ion-icon name="close-circle" color="lightDark" (click)="clearInput()"></ion-icon>
+    </div>
+
+    <ion-grid fixed>
+
+        <ion-row class="ion-justify-content-between">
+            <ion-col size="12" *ngFor="let activite of activities">
+                <div class="activiteHolder" (click)="getActiviteDetail(activite.id)" *ngIf="activite.ligneNvMatiere">
+                    <img [src]="activite.ligneNvMatiere.matiere.photo">
+                    <p>{{activite.nom}}
+                        <span>{{getHoraire(activite.horraires)}}</span>
+                    </p>
+                </div>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+</ion-content>

@@ -1,0 +1,17 @@
+<div class="actionsHolder">
+    <div class="abscence" (click)="marquerAbscence()" tappable>
+        <ion-icon slot="start" name="log-in-outline"></ion-icon>
+        <p>Marquer l'abscence</p>
+    </div>
+    <div class="divider"></div>
+    <div class="note" (click)="showModificationForm()" tappable>
+        <ion-icon slot="start" name="create-outline"></ion-icon>
+        <p>Modifier la séance</p>
+    </div>
+    <div class="divider"></div>
+
+    <div class="deletion" (click)="showDeletionModal()" tappable>
+        <ion-icon slot="start" name="trash-outline"></ion-icon>
+        <p>Supprimer la séance</p>
+    </div>
+</div>

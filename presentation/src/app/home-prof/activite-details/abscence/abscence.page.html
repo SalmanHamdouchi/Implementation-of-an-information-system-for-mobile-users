@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-icon slot="start" name="arrow-back-outline" color="primary" (click)="goBack()"></ion-icon>
+        <ion-title color="primary">Marquer l'abscence</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="seance">
+        <div class="etudiant" *ngFor="let p of seance.presences" [id]="p.id">
+            <div class="namesHolder">
+                <p class="FRName">{{p.etudiant.nom}} {{p.etudiant.prenom}}</p>
+                <p class="ARName">{{p.etudiant.nomArabe}} {{p.etudiant.prenomArabe}}</p>
+            </div>
+            <div class="actionsHolder">
+                <div class="prescence no-ripple">
+                    <ion-label>présent(e) :</ion-label>
+                    <ion-checkbox checked="{{p.absent}}" color="tertiary"></ion-checkbox>
+                </div>
+
+                <ion-button (click)="showNoteInput($event)" fill="clear">
+                    Ajouter une note
+                </ion-button>
+            </div>
+            <div class="noteInputHolder" id="noteInput">
+                <ion-input type="text" placeholder="Entrer une note" value="{{p.remarque}}"></ion-input>
+                <ion-icon name="send" (click)="hideNoteInput($event)" color="tertiary"></ion-icon>
+            </div>
+        </div>
+    </div>
+    <!-- this.elem = event.target;
+    this.parentElement = this.elem.parentElement.parentElement;
+    
+    this.parentElement.querySelector(".noteInputHolder")[0] -->
+
+</ion-content>
+
+<ion-footer class="ion-no-border transparent">
+    <div class="addBtnHolder">
+        <ion-button (click)="marquerAbscence()" color="primary" shape="round">
+            Marquer l'abscence
+        </ion-button>
+    </div>
+</ion-footer>

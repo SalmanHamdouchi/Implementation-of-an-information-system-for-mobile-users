@@ -1,0 +1,132 @@
+.greetings {
+    font-weight: 600;
+    font-size: 25px;
+    p {
+        margin-bottom: 5px;
+        margin-top: 30px;
+    }
+}
+
+.activitiesInfo {
+    font-size: 18px;
+}
+
+.logout {
+    position: absolute;
+    top: 0.7%;
+    right: 3%;
+    ion-button {
+        border: 1px solid var(--ion-color-primary);
+        box-shadow: 0px 0px 0px 0.5px var(--ion-color-primary);
+        text-transform: unset;
+        border-radius: 5px;
+        --padding-start: 5px;
+        --padding-end: 3px;
+    }
+    ion-icon {
+        font-size: 25px
+    }
+}
+
+.aboutAppIcon {
+    position: absolute;
+    right: 36px;
+    top: 0.8%;
+    ion-icon {
+        font-size: 34px;
+    }
+}
+
+.searchbarContainer {
+    position: relative;
+    ion-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        z-index: 3;
+    }
+    ion-icon[name="search"] {
+        left: 20px;
+    }
+    ion-icon[name="close-circle"] {
+        right: 10px;
+    }
+}
+
+.searchbar {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 50px;
+    height: 50px;
+    background-color: #ebebef;
+    --padding-start: 60px;
+    --padding-end: 30px;
+}
+
+ion-grid {
+    padding: 0;
+    margin-top: 30px;
+    ion-col {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .activiteHolder {
+        border-radius: 20px;
+        display: flex;
+        height: 220px;
+        margin-top: 10px;
+        box-shadow: 0px 1px 6px #5f5f5f;
+        position: relative;
+        img {
+            // height: 78%;
+            // width: 100%;
+            // border-top-left-radius: 20px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+        p {
+            font-size: 22px;
+            font-weight: 400;
+            padding: 0px 9px 0px 9px;
+            background-color: var(--ion-color-primary);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            opacity: 0.95;
+            max-width: 90%;
+            text-transform: capitalize;
+            border-radius: 6px;
+            margin: 0;
+            color: white;
+            z-index: 2;
+            transform: scaleX(0.95);
+            span {
+                display: block;
+                opacity: 0.8;
+            }
+        }
+        .txtHolder {
+            width: 100%;
+            height: 50px;
+            background-color: rgba(var(--ion-color-primary), 0.905);
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+        }
+    }
+}
+
+.ion-color-lightDark {
+    --ion-color-base: #444851;
+    --ion-color-base-rgb: 68, 72, 81;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255, 255, 255;
+    --ion-color-shade: #3c3f47;
+    --ion-color-tint: #575a62;
+}
